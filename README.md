@@ -1,5 +1,7 @@
 # MyPMFs
 
+Postic G., Hamelryck T., Chomilier J., Stratmann D.
+
 ## Generate statistical potentials from a user-defined list of protein structures
 
 
