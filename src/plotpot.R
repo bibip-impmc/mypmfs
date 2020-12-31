@@ -1,4 +1,6 @@
-# Copyright (C) 2017 Guillaume Postic (guillaume.postic@upmc.fr)
+# Copyright (C) 2020 Guillaume Postic (guillaume.postic@u-paris.fr)
+
+options(warn=-1) # because "lwd.ticks" works but returns a warning
 
 args = commandArgs(trailingOnly=TRUE)
 
@@ -19,6 +21,7 @@ halfbin = as.numeric(args[2])/2
 mylimit = as.numeric(args[3])-halfbin
 outfile = paste(args[5], '/', args[4], '.svg', sep="")
 svg(outfile)
-plot(seq(from=halfbin, to=mylimit, by=as.numeric(args[2])), mydata$V1, type="l", xlab="Distance (Å)", ylab="Pairwise score")
-abline(h=0, col="red", lwd=2, lty=2)
+plot(seq(from=halfbin, to=mylimit, by=as.numeric(args[2])), mydata$V1, type="l", xlab="Interatomic distance (Å)", ylab="Interaction score", col="darkblue", las=1, cex.lab=1.75, cex.axis=1.5, cex.main=1.5, cex.sub=1.5, tck=0.02, lwd = 4, lwd.ticks=3, xaxp = c(0, 100, 50))
+abline(h=0, lwd=3, lty=2)
+box(lwd=3)
 dev.off()
